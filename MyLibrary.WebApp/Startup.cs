@@ -17,6 +17,7 @@ using MyLibrary.DataAccess.Abstract;
 using MyLibrary.DataAccess.Concrete;
 using MyLibrary.DataAccess.UnitOfWorks;
 using MyLibrary.WebApp.AppService;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace MyLibrary.WebApp
 {
@@ -32,33 +33,16 @@ namespace MyLibrary.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddHttpClient<BookApiService>(opt =>
             opt.BaseAddress = new Uri(Configuration["baseUrl"]));
 
             services.AddHttpClient<UserApiService>(opt =>
             opt.BaseAddress = new Uri(Configuration["baseUrl"]));
 
-            services.AddBusinessServices(); //ServiceCollectionExtention den gelir.
+            services.AddBusinessServices(); 
             services.AddControllersWithViews();
 
-            #region Authentication
-            var authenticationBuilder = services.AddAuthentication(options =>
-            {
-                options.DefaultChallengeScheme = "Authentication";
-                options.DefaultScheme = "Authentication";
-            });
-
-            //add main cookie authentication
-            authenticationBuilder.AddCookie("Authentication", options =>
-            {
-                options.Cookie.Name = $"Book.Cookie";
-                options.Cookie.HttpOnly = true;
-                options.LoginPath = "/Login";
-                options.AccessDeniedPath = "/Error";
-            });
-            #endregion
-
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
           
         }
 
@@ -81,9 +65,7 @@ namespace MyLibrary.WebApp
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthorization();
-            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

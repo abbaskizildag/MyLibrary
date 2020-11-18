@@ -1,6 +1,6 @@
-﻿
+﻿@model MyLibrary.WebApp.DTOs.UserDto
 
-@*<link href="~/Content/login-register.css" rel="stylesheet" />
+<link href="~/css/login-register.css" rel="stylesheet" />
 <link href="~/Content/validation-summary.css" rel="stylesheet" />
 @using (Html.BeginForm())
 {
@@ -14,7 +14,7 @@
                 @Html.ValidationSummary(false)
                 <div class="input-group ">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Kullanıcı Adınız" })
+                    @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Kullanıcı Adınız" })
 
                 </div>
                 <div class="input-group">
@@ -35,4 +35,4 @@
         </div>
     </div>
 </section>
-}*@
+}

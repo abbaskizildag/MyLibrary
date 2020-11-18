@@ -22,7 +22,7 @@ namespace MyLibrary.WebApp.AppService
             var response = await _httpClient.GetAsync("/api/v1/books");
             if (response.IsSuccessStatusCode)
             {
-                bookDtos = JsonConvert.DeserializeObject<IEnumerable<BookDto>>(await response.Content.ReadAsStringAsync()); //dönüştürme işleni
+                bookDtos = JsonConvert.DeserializeObject<IEnumerable<BookDto>>(await response.Content.ReadAsStringAsync()); 
             }
             else
             {
@@ -32,26 +32,21 @@ namespace MyLibrary.WebApp.AppService
         }
         public void Add(BookDto bookDto)
         {
-            var stringContent = new StringContent(JsonConvert.SerializeObject(bookDto), Encoding.UTF8, "application/json"); //gönderecek data burda encoding etmeyi unutmamak lazım.
+            var stringContent = new StringContent(JsonConvert.SerializeObject(bookDto), Encoding.UTF8, "application/json"); 
 
             var response = _httpClient.PostAsync("/api/v1/books", stringContent).Result;
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                bookDto = JsonConvert.DeserializeObject<BookDto>( response.Content.ReadAsStringAsync().Result); //json data'yı class'a dönüştürme işlemi
-                //response.Content.ReadAsStringAsync().Result)
-
+                bookDto = JsonConvert.DeserializeObject<BookDto>( response.Content.ReadAsStringAsync().Result);
             }
             else
             {
-                //loglama yap.
 
             }
         }
 
         public bool Update(BookDto bookDto)
         {
-           
-
             var stringContent = new StringContent(JsonConvert.SerializeObject(bookDto), Encoding.UTF8, "application/json");
             var response =  _httpClient.PutAsync("/api/v1/books", stringContent);
 
@@ -82,7 +77,6 @@ namespace MyLibrary.WebApp.AppService
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 return JsonConvert.DeserializeObject<BookDto>( response.Content.ReadAsStringAsync().Result);
-
             }
             else
             {

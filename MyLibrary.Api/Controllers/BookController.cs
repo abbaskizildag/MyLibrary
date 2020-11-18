@@ -55,12 +55,7 @@ namespace MyLibrary.Api.Controllers
         public ActionResult Update( BookDto bookDto)
         {
             var book = _bookService.GetByID(bookDto.Id);
-            //if (book is null)
-            //{
-            //    book = new Book { Name = bookDto.Name, Author = bookDto.Author, PublishedYear = bookDto.PublishedYear, CategoryID = bookDto.CategoryID, SummaryAboutBook = bookDto.SummaryAboutBook, BookImage = bookDto.BookImage };
-            //    _bookService.Create(book);
-            //    return CreatedAtAction("Get", new { id = id }, book);
-            //}
+
             book.Name = bookDto.Name;
             book.Author = bookDto.Author;
             book.PublishedYear = bookDto.PublishedYear;

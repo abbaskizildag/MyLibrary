@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyLibrary.Business.Abstract;
@@ -13,6 +14,7 @@ using MyLibrary.WebApp.Models;
 
 namespace MyLibrary.WebApp.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
 

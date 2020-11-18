@@ -12,7 +12,6 @@ namespace MyLibrary.WebApp.DTOs
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-       // public List<int> Roles { get; set; } 
         public string ShortDescription { get; set; }
     }
 }

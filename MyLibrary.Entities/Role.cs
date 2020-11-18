@@ -7,7 +7,7 @@ namespace MyLibrary.Entities
 {
     public class Role:BaseModel
     {
-        public string Name { get; set; }
+        public int Name { get; set; }
         public List<User> Users { get; set; }
     }
 }

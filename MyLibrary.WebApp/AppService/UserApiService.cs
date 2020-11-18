@@ -22,7 +22,7 @@ namespace MyLibrary.WebApp.AppService
             var response = await _httpClient.GetAsync("/api/v1/users");
             if (response.IsSuccessStatusCode)
             {
-                userDtos = JsonConvert.DeserializeObject<IEnumerable<UserDto>>(await response.Content.ReadAsStringAsync()); //dönüştürme işleni
+                userDtos = JsonConvert.DeserializeObject<IEnumerable<UserDto>>(await response.Content.ReadAsStringAsync()); 
             }
             else
             {
@@ -33,18 +33,15 @@ namespace MyLibrary.WebApp.AppService
 
         public void Add(UserDto userDto)
         {
-            var stringContent = new StringContent(JsonConvert.SerializeObject(userDto), Encoding.UTF8, "application/json"); //gönderecek data burda encoding etmeyi unutmamak lazım.
+            var stringContent = new StringContent(JsonConvert.SerializeObject(userDto), Encoding.UTF8, "application/json"); 
 
             var response = _httpClient.PostAsync("/api/v1/users", stringContent).Result;
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                userDto = JsonConvert.DeserializeObject<UserDto>(response.Content.ReadAsStringAsync().Result); //json data'yı class'a dönüştürme işlemi
-                //response.Content.ReadAsStringAsync().Result)
-
+                userDto = JsonConvert.DeserializeObject<UserDto>(response.Content.ReadAsStringAsync().Result); 
             }
             else
             {
-             
 
             }
         }

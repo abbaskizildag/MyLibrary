@@ -22,33 +22,30 @@ namespace MyLibrary.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<User>> Get()
         {
-            return await _userService.GetAll();
+            return await  _userService.GetAll();
+
         }
         [HttpGet("{id}")]
-        public ActionResult<User> GetById(int id)
+        public ActionResult GetById(int id)
         {
             var model = _userService.GetByID(id);
             if (model is null) return NotFound();
 
-            return model;
+            return Ok(model);
         }
         [HttpPost]
         public ActionResult Post(UserDto userDto)
         {
+
             var newuser = new User { UserName  = userDto.UserName, Password = userDto.Password, FirstName = userDto.FirstName, LastName = userDto.LastName, ShortDescription = userDto.ShortDescription};
             _userService.Create(newuser);
             return Created(string.Empty, newuser);
         }
+
         [HttpPut]
         public ActionResult Put( UserDto userDto)
         {
             var user = _userService.GetByID(userDto.Id);
-            //if (user is null)
-            //{
-            //    user = new User { UserName = userDto.UserName, Password = userDto.Password, FirstName = userDto.FirstName, LastName = userDto.LastName, ShortDescription = userDto.ShortDescription };
-            //    _userService.Create(user);
-            //    return CreatedAtAction("Get", new { id = id }, user);
-            //}
             user.UserName = userDto.UserName;
             user.Password = userDto.Password;
             user.FirstName = userDto.FirstName;

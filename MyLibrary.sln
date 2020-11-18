@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary.Entities", "MyLibrary.Entities\MyLibrary.Entities.csproj", "{C33116AB-7132-4E0D-BF0B-36817674BC41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary.Entities", "MyLibrary.Entities\MyLibrary.Entities.csproj", "{C33116AB-7132-4E0D-BF0B-36817674BC41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary.DataAccess", "MyLibrary.DataAccess\MyLibrary.DataAccess.csproj", "{5DC325F4-76AC-44DE-93B6-F5802558C741}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary.DataAccess", "MyLibrary.DataAccess\MyLibrary.DataAccess.csproj", "{5DC325F4-76AC-44DE-93B6-F5802558C741}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary.Business", "MyLibrary.Business\MyLibrary.Business.csproj", "{F03F7645-F0F8-421B-8B1D-DA0550D0AAC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary.Business", "MyLibrary.Business\MyLibrary.Business.csproj", "{F03F7645-F0F8-421B-8B1D-DA0550D0AAC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary.WebApp", "MyLibrary.WebApp\MyLibrary.WebApp.csproj", "{6806A12F-53F0-45E4-B219-875145217078}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary.WebApp", "MyLibrary.WebApp\MyLibrary.WebApp.csproj", "{6806A12F-53F0-45E4-B219-875145217078}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary.Api", "MyLibrary.Api\MyLibrary.Api.csproj", "{C30C77B5-8DB0-4F95-AB59-114387331CA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary.Api", "MyLibrary.Api\MyLibrary.Api.csproj", "{C30C77B5-8DB0-4F95-AB59-114387331CA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

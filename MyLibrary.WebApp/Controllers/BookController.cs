@@ -9,6 +9,7 @@ using MyLibrary.WebApp.DTOs;
 
 namespace MyLibrary.WebApp.Controllers
 {
+    [Authorize]
     public class BookController : Controller
     {
         private readonly BookApiService _bookApiService;
@@ -57,10 +58,7 @@ namespace MyLibrary.WebApp.Controllers
         }
         public IActionResult Delete(int id)
         {
-            //  var category = await _categoryApiService.GetByAsync(id);
-
             _bookApiService.Remove(id);
-
             return RedirectToAction("Index");
         }
     }

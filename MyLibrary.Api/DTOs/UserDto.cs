@@ -12,7 +12,7 @@ namespace MyLibrary.Api.DTOs
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-      //  public List<int> Roles { get; set; }
+        //public int RoleName { get; set; }
         public string ShortDescription { get; set; }
     }
 }

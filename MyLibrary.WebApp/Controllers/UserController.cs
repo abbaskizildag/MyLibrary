@@ -20,34 +20,19 @@ namespace MyLibrary.WebApp.Controllers
         public async Task<ActionResult> Index()
         {
             var model = await _userApiService.GetAll();
+            
             return View(model);
         }
 
-        // GET: UserController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: UserController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: UserController/Create
         [HttpPost]
         public ActionResult Create(UserDto userDto)
         {
             _userApiService.Add(userDto);
-            //if (ModelState.IsValid)
-            //{
-
-            //}
-            //else
-            //{
-            //    return View("Create", userDto);
-            //}
 
             return RedirectToAction("Index");
         }
@@ -68,10 +53,7 @@ namespace MyLibrary.WebApp.Controllers
         }
         public IActionResult Delete(int id)
         {
-            //  var category = await _categoryApiService.GetByAsync(id);
-
             _userApiService.Remove(id);
-
             return RedirectToAction("Index");
         }
 

@@ -9,11 +9,6 @@ namespace MyLibrary.DataAccess
 {
     public class MyLibraryDbContext :DbContext
     {
-        //public MyLibraryDbContext(DbContextOptions<MyLibraryDbContext> options):base(options)
-        //{
-
-        //}
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -26,7 +21,6 @@ namespace MyLibrary.DataAccess
         {
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new BookConfiguration());
-
         }
 
     }
