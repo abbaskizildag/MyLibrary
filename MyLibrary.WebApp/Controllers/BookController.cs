@@ -9,7 +9,7 @@ using MyLibrary.WebApp.DTOs;
 
 namespace MyLibrary.WebApp.Controllers
 {
-    [Authorize]
+
     public class BookController : Controller
     {
         private readonly BookApiService _bookApiService;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyLibrary.Api.DTOs;
@@ -15,10 +16,12 @@ namespace MyLibrary.Api.Controllers
     public class BookController : ControllerBase
     {
         private readonly IBookService _bookService;
+        private readonly IMapper _mapper;
 
-        public BookController(IBookService bookService)
+        public BookController(IBookService bookService, IMapper mapper)
         {
             _bookService = bookService;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -52,7 +55,7 @@ namespace MyLibrary.Api.Controllers
         }
 
         [HttpPut]
-        public ActionResult Update( BookDto bookDto)
+        public ActionResult Update(BookDto bookDto)
         {
             var book = _bookService.GetByID(bookDto.Id);
 

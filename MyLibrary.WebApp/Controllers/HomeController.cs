@@ -14,7 +14,7 @@ using MyLibrary.WebApp.Models;
 
 namespace MyLibrary.WebApp.Controllers
 {
-    [Authorize]
+
     public class HomeController : Controller
     {
 
